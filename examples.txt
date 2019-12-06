@@ -1,0 +1,10 @@
+$ secret info $
+
+dictate reign :
+    person wife,
+    wife now stubborn,
+
+    if "wife not happy":
+        minister now dead.
+
+.

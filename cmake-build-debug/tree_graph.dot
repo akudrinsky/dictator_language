@@ -1,0 +1,41 @@
+digraph G{
+	edge[color="chartreuse4",fontcolor="blue",fontsize=12];
+	node[shape="rectangle",fontsize=15];
+	1 [shape=record,label="  <f0> 0x7fc50d4029e0| {D | (null)} | <f1> 0x7fc50d4029b0" ];
+	2 [shape=record,label="  <f0> 0x7fc50d402770| {D | (null)} | <f1> 0x7fc50d4029b0" ];
+	4 [shape=record,label="  <f0> 0x0| {unknown | (null)} | <f1> 0x0" ];
+		2:<f0> -> 4
+	5 [shape=record,label="  <f0> 0x0| {def | reign:} | <f1> 0x7fc50d402980" ];
+	11 [shape=record,label="  <f0> 0x7fc50d4028d0| {D | (null)} | <f1> 0x7fc50d402950" ];
+	22 [shape=record,label="  <f0> 0x7fc50d402810| {D | (null)} | <f1> 0x7fc50d4028a0" ];
+	44 [shape=record,label="  <f0> 0x0| {unknown | (null)} | <f1> 0x0" ];
+		22:<f0> -> 44
+	45 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402850" ];
+	91 [shape=record,label="  <f0> 0x0| {id | person} | <f1> 0x0" ];
+		45:<f1> -> 91[color="red"]
+		22:<f1> -> 45[color="red"]
+		11:<f0> -> 22
+	23 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402900" ];
+	47 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
+		23:<f1> -> 47[color="red"]
+		11:<f1> -> 23[color="red"]
+		5:<f1> -> 11[color="red"]
+		2:<f1> -> 5[color="red"]
+		1:<f0> -> 2
+	3 [shape=record,label="  <f0> 0x0| {def | reign:} | <f1> 0x7fc50d402980" ];
+	7 [shape=record,label="  <f0> 0x7fc50d4028d0| {D | (null)} | <f1> 0x7fc50d402950" ];
+	14 [shape=record,label="  <f0> 0x7fc50d402810| {D | (null)} | <f1> 0x7fc50d4028a0" ];
+	28 [shape=record,label="  <f0> 0x0| {unknown | (null)} | <f1> 0x0" ];
+		14:<f0> -> 28
+	29 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402850" ];
+	59 [shape=record,label="  <f0> 0x0| {id | person} | <f1> 0x0" ];
+		29:<f1> -> 59[color="red"]
+		14:<f1> -> 29[color="red"]
+		7:<f0> -> 14
+	15 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402900" ];
+	31 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
+		15:<f1> -> 31[color="red"]
+		7:<f1> -> 15[color="red"]
+		3:<f1> -> 7[color="red"]
+		1:<f1> -> 3[color="red"]
+}

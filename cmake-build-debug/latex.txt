@@ -1,0 +1,16 @@
+\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\title{New approaches to derivative analysis}
+\author{Alexey Kudrinsky}
+\date{\today}
+\maketitle
+
+\section{Introduction}
+In this paper we discuss several new approaches to finding function derivatives. Many people, and even mathematicians, would say that is a trick, because it gives you a huge boost in productivity.
+Honor programming!
+\section{Example}
+\par Let's consider an example of finding a derivative in an expression that normal universities would call brutal \begin{math}((1+{(x)}^{2}))'\end{math}\par Just take it simple:  \begin{math}(1)' \to 0\end{math}\par Consequently,  \begin{math}(x)' \to 1\end{math}\par If all else fails, read the well-known book K and R:  \begin{math}({(x)}^{2})' \to 2*{(x)}^{1}*1\end{math}\par Consequently,  \begin{math}((1+{(x)}^{2}))' \to (0+2*{(x)}^{1}*1)\end{math}\par And so, roughly speaking \begin{math} \to 2*x\end{math}\par \par All in all, the derivative of this crocodile:  \begin{math}((1+{(x)}^{2}))'\end{math}\par  \begin{math} \to 2*x\end{math}\section{Conclusion}
+In previous sections we modestly discussed different techniques, which make differentiation quite easy and even intuitively understandable. Of course, this brief leaflet should be considered only as an introduction to new methods of derivative analysis.\section{References}
+[1] Kudrinsky, Alexey M. New approaches to derivative analysis. ACM Press, Perm, 2019.\end{document}

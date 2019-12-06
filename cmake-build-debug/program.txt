@@ -1,0 +1,6 @@
+$ my program $
+
+dictate reign :
+    person wife,
+    wife now happy,
+.
