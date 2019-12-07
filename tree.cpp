@@ -195,7 +195,7 @@ void node::photo(const char* pict_name, const char* pict_type, int iter, FILE* p
     }
     if (right != nullptr) {
         (*right).photo (pict_name, pict_type, iter * 2 + 1, pFile);
-        fprintf (pFile, "\t\t%d:<f1> -> %d[color=\"red\"]\n", iter, iter * 2 + 1);
+        fprintf (pFile, "\t\t%d:<f1> -> %d[color=\"orange\"]\n", iter, iter * 2 + 1);
     }
 
     if (iter == 1) {
@@ -305,7 +305,7 @@ node* rec_descent(const char *filename) {
 
     cell *nodes = tokenize (str);
 
-    /*
+
     printf ("tokens:\n");
     int i = 0;
     while (nodes[i].type != UNKNOWN) {
@@ -313,13 +313,10 @@ node* rec_descent(const char *filename) {
         ++i;
     }
 
-    for (int i = 0; i < ids->amount; ++i) {
-        err_info (ids->names[i]);
-        err_info ("\n");
-    }
-     */
+    frontend* parser = new frontend (nodes);
 
-    return parse_all (nodes);
+
+    return parser->all ();
 }
 
 //‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐

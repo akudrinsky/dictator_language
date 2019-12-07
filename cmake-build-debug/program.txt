@@ -1,6 +1,8 @@
 $ my program $
 
 dictate reign :
-    person wife,
-    wife now happy,
+    person wife
+    wife now ( 1 + 3 * 2 ) / 3
+
+    person minister
 .

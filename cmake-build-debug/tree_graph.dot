@@ -1,41 +1,43 @@
 digraph G{
 	edge[color="chartreuse4",fontcolor="blue",fontsize=12];
 	node[shape="rectangle",fontsize=15];
-	1 [shape=record,label="  <f0> 0x7fc50d4029e0| {D | (null)} | <f1> 0x7fc50d4029b0" ];
-	2 [shape=record,label="  <f0> 0x7fc50d402770| {D | (null)} | <f1> 0x7fc50d4029b0" ];
-	4 [shape=record,label="  <f0> 0x0| {unknown | (null)} | <f1> 0x0" ];
-		2:<f0> -> 4
-	5 [shape=record,label="  <f0> 0x0| {def | reign:} | <f1> 0x7fc50d402980" ];
-	11 [shape=record,label="  <f0> 0x7fc50d4028d0| {D | (null)} | <f1> 0x7fc50d402950" ];
-	22 [shape=record,label="  <f0> 0x7fc50d402810| {D | (null)} | <f1> 0x7fc50d4028a0" ];
-	44 [shape=record,label="  <f0> 0x0| {unknown | (null)} | <f1> 0x0" ];
-		22:<f0> -> 44
-	45 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402850" ];
-	91 [shape=record,label="  <f0> 0x0| {id | person} | <f1> 0x0" ];
-		45:<f1> -> 91[color="red"]
-		22:<f1> -> 45[color="red"]
-		11:<f0> -> 22
-	23 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402900" ];
-	47 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
-		23:<f1> -> 47[color="red"]
-		11:<f1> -> 23[color="red"]
-		5:<f1> -> 11[color="red"]
-		2:<f1> -> 5[color="red"]
-		1:<f0> -> 2
-	3 [shape=record,label="  <f0> 0x0| {def | reign:} | <f1> 0x7fc50d402980" ];
-	7 [shape=record,label="  <f0> 0x7fc50d4028d0| {D | (null)} | <f1> 0x7fc50d402950" ];
-	14 [shape=record,label="  <f0> 0x7fc50d402810| {D | (null)} | <f1> 0x7fc50d4028a0" ];
-	28 [shape=record,label="  <f0> 0x0| {unknown | (null)} | <f1> 0x0" ];
-		14:<f0> -> 28
-	29 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402850" ];
-	59 [shape=record,label="  <f0> 0x0| {id | person} | <f1> 0x0" ];
-		29:<f1> -> 59[color="red"]
-		14:<f1> -> 29[color="red"]
-		7:<f0> -> 14
-	15 [shape=record,label="  <f0> 0x0| {person(def) | (null)} | <f1> 0x7fc50d402900" ];
-	31 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
-		15:<f1> -> 31[color="red"]
-		7:<f1> -> 15[color="red"]
-		3:<f1> -> 7[color="red"]
-		1:<f1> -> 3[color="red"]
+	1 [shape=record,label="  <f0> 0x0| {P | (null)} | <f1> 0x7fbe89e034f0" ];
+	3 [shape=record,label="  <f0> 0x0| {D | (null)} | <f1> 0x7fbe89e034c0" ];
+	7 [shape=record,label="  <f0> 0x0| {dictate | (null)} | <f1> 0x7fbe89e03190" ];
+	15 [shape=record,label="  <f0> 0x0| {id | reign} | <f1> 0x7fbe89e03490" ];
+	31 [shape=record,label="  <f0> 0x7fbe89e03400| {B | (null)} | <f1> 0x7fbe89e03460" ];
+	62 [shape=record,label="  <f0> 0x7fbe89e03220| {B | (null)} | <f1> 0x7fbe89e033d0" ];
+	124 [shape=record,label="  <f0> 0x0| {B | (null)} | <f1> 0x7fbe89e031f0" ];
+	249 [shape=record,label="  <f0> 0x0| {person | (null)} | <f1> 0x7fbe89e031c0" ];
+	499 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
+		249:<f1> -> 499[color="orange"]
+		124:<f1> -> 249[color="orange"]
+		62:<f0> -> 124
+	125 [shape=record,label="  <f0> 0x7fbe89e03250| {now | (null)} | <f1> 0x7fbe89e033a0" ];
+	250 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
+		125:<f0> -> 250
+	251 [shape=record,label="  <f0> 0x7fbe89e03340| {/ | (null)} | <f1> 0x7fbe89e03370" ];
+	502 [shape=record,label="  <f0> 0x7fbe89e03280| {+ | (null)} | <f1> 0x7fbe89e03310" ];
+	1004 [shape=record,label="  <f0> 0x0| {number | 1} | <f1> 0x0" ];
+		502:<f0> -> 1004
+	1005 [shape=record,label="  <f0> 0x7fbe89e032b0| {* | (null)} | <f1> 0x7fbe89e032e0" ];
+	2010 [shape=record,label="  <f0> 0x0| {number | 3} | <f1> 0x0" ];
+		1005:<f0> -> 2010
+	2011 [shape=record,label="  <f0> 0x0| {number | 2} | <f1> 0x0" ];
+		1005:<f1> -> 2011[color="orange"]
+		502:<f1> -> 1005[color="orange"]
+		251:<f0> -> 502
+	503 [shape=record,label="  <f0> 0x0| {number | 3} | <f1> 0x0" ];
+		251:<f1> -> 503[color="orange"]
+		125:<f1> -> 251[color="orange"]
+		62:<f1> -> 125[color="orange"]
+		31:<f0> -> 62
+	63 [shape=record,label="  <f0> 0x0| {person | (null)} | <f1> 0x7fbe89e03430" ];
+	127 [shape=record,label="  <f0> 0x0| {id | minister} | <f1> 0x0" ];
+		63:<f1> -> 127[color="orange"]
+		31:<f1> -> 63[color="orange"]
+		15:<f1> -> 31[color="orange"]
+		7:<f1> -> 15[color="orange"]
+		3:<f1> -> 7[color="orange"]
+		1:<f1> -> 3[color="orange"]
 }

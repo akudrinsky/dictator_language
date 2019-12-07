@@ -1,0 +1,1 @@
+Strange things in def_func [2] (frontend): (

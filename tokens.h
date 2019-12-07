@@ -37,6 +37,7 @@ enum token_codes {
     UNKNOWN,
     PROGRAMM,
     BLOCK,
+    INSTRUCTION,
     VARLIST,
     ID,
     VARIABLE,
@@ -54,8 +55,8 @@ enum token_codes {
     IS_BIGGER,
     IS_LESS,
     NOT_EQUAL,
-    ADD,
-    SUB,                      //......
+    PLUS,
+    MINUS,                      //......
     MULT,
     DIVIDE,
 
@@ -64,7 +65,10 @@ enum token_codes {
 
     OPEN_BR,
     CLOS_BR,
-    COND_DIVIDER
+    COND_DIVIDER,
+
+    OPEN_EQ,
+    CLOS_EQ
 };
 
 enum person_states {
@@ -86,19 +90,20 @@ const token tokens[] = {
         {"unknown", UNKNOWN,    0, 7},
         {"P",       PROGRAMM,   1, 1},
         {"D",       BLOCK,      2, 1},
+        {"B",       INSTRUCTION,2, 1},
         {"varlist", VARLIST,    2, 7},
-        {"id",      ID,         1, 2},//
-        {"person",  VARIABLE,   1, 6},//
+        {"id",      ID,         1, 2},
+        {"person",  VARIABLE,   1, 6},
 
-        {"dictate", DEFINITION, 1, 7},//
-        {"cause",   CALL,       2, 5},//
-        {"summon",  RETURN,     0, 6},//
+        {"dictate", DEFINITION, 1, 7},
+        {"cause",   CALL,       2, 5},
+        {"summon",  RETURN,     0, 6},
 
         {"number",  NUMBER,     0, 6},
 
-        {"now",     ASSIGN,     2, 3},//
+        {"now",     ASSIGN,     2, 3},
 
-        {"if",      IF,         2, 2},//
+        {"if",      IF,         2, 2},
         {"otherwise",CONDITION, 2, 4},
 
         {"while",   WHILE,      2, 5},
@@ -108,8 +113,8 @@ const token tokens[] = {
         {"worse",   IS_LESS,    2, 5},
         {"not",     NOT_EQUAL,  2, 3},
 
-        {"+",       ADD,        2, 1},
-        {"-",       SUB,        2, 1},
+        {"+",       PLUS,        2, 1},
+        {"-",       MINUS,        2, 1},
         {"*",       MULT,       2, 1},
         {"/",       DIVIDE,     2, 1},
 
@@ -119,6 +124,9 @@ const token tokens[] = {
         {":",       OPEN_BR,    -1, 1},
         {".",       CLOS_BR,    -1, 1},
         {"\"",      COND_DIVIDER,-1, 1},
+
+        {"(",       OPEN_EQ,    -1, 1},
+        {")",       CLOS_EQ,    -1, 1},
 };
 
 const token states[] {

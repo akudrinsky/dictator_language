@@ -5,7 +5,7 @@ int main() {
     //diff_test ();
 
     node* nd = rec_descent ();
-    //nd->photo ();
+    nd->photo ();
 
     return 0;
 }

@@ -137,6 +137,18 @@ cell* tokenize (char* str, const int max_nodes_number = 100) {
                     str += 1;
                     break;
                 }
+                case '(': {
+                    nodes[n_nodes].type = OPEN_EQ;
+                    data = "(";
+                    str += 1;
+                    break;
+                }
+                case ')': {
+                    nodes[n_nodes].type = CLOS_EQ;
+                    data = ")";
+                    str += 1;
+                    break;
+                }
                 case '\"': {
                     nodes[n_nodes].type = COND_DIVIDER;
                     data = "\"";
@@ -235,13 +247,13 @@ cell* tokenize (char* str, const int max_nodes_number = 100) {
                     break;
                 }
                 case '+': {
-                    nodes[n_nodes].type = ADD;
+                    nodes[n_nodes].type = PLUS;
                     data = "+";
                     str += 1;
                     break;
                 }
                 case '-': {
-                    nodes[n_nodes].type = SUB;
+                    nodes[n_nodes].type = MINUS;
                     data = "-";
                     str += 1;
                     break;
