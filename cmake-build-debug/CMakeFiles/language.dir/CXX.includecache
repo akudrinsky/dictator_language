@@ -6,15 +6,59 @@
 
 #IncludeRegexTransform: 
 
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/CPU.cpp
+stack.cpp
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/stack.cpp
+enumerate.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/enumerate.h
+exit_codes.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/exit_codes.h
+math.h
+-
+unistd.h
+-
+commands.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/commands.h
+commands.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/commands.h
+
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/asm.cpp
+my_lyb.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/my_lyb.h
+enumerate.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/enumerate.h
+cstdlib
+-
+exit_codes.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/exit_codes.h
+commands.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/commands.h
+
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/backend.h
+tree.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/tree.h
+
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/commands.h
+
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/enumerate.h
+commands.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/commands.h
+
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/exit_codes.h
+
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/frontend.h
 tree.h
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/tree.h
 
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/main.cpp
-stdio.h
--
 tree.cpp
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/tree.cpp
+asm.cpp
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/asm.cpp
+CPU.cpp
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/CPU.cpp
+backend.h
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/backend.h
 
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/my_lyb.h
 stdio.h
@@ -31,6 +75,12 @@ stdarg.h
 -
 
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/operations.h
+
+/Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/stack.cpp
+stdio.h
+-
+stdlib.h
+-
 
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/tokenizer.h
 tree.h
@@ -67,6 +117,8 @@ operations.h
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/operations.h
 tokens.h
 /Users/alexeykudrinsky/Documents/MIPT/1 course/Introduction to data structures/language/tokens.h
+stdlib.h
+-
 stdio.h
 -
 stdlib.h

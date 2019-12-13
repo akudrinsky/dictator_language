@@ -4,20 +4,40 @@
 struct for_names {
     char* *names;
     int amount;
+    int initial_ammount;
 
     explicit for_names (int size = 30);
     void append (char* element);
+
+    void print ();
+
+    int search_name (char* name);
     ~for_names ();
 };
 
-for_names::for_names(int size) {
+for_names::for_names (int size) {
     names = new char*[size];
     amount = 0;
 }
 
-void for_names::append(char* element) {
+void for_names::append (char* element) {
     names[amount] = element;
     ++amount;
+}
+
+void for_names::print () {
+    for (int i = 0; i < amount; ++i) {
+        printf ("variable: %s\n", names[i]);
+    }
+}
+
+int for_names::search_name (char *name) {
+    for (int i = 0; i < amount; ++i) {
+        if (strcmp (names[i], name) == 0) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 for_names::~for_names() {
@@ -48,6 +68,8 @@ enum token_codes {
 
     NUMBER,
     ASSIGN,
+    OUT,
+
     IF,
     CONDITION,
     WHILE,
@@ -68,7 +90,13 @@ enum token_codes {
     COND_DIVIDER,
 
     OPEN_EQ,
-    CLOS_EQ
+    CLOS_EQ,
+
+    ARGUMENTS,
+    LAST_ARG,
+    ASSIGN_BY_LEN,
+
+    PRINT
 };
 
 enum person_states {
@@ -102,6 +130,7 @@ const token tokens[] = {
         {"number",  NUMBER,     0, 6},
 
         {"now",     ASSIGN,     2, 3},
+        {"know",    OUT,        1, 4},
 
         {"if",      IF,         2, 2},
         {"otherwise",CONDITION, 2, 4},
@@ -114,8 +143,8 @@ const token tokens[] = {
         {"not",     NOT_EQUAL,  2, 3},
 
         {"+",       PLUS,        2, 1},
-        {"-",       MINUS,        2, 1},
-        {"*",       MULT,       2, 1},
+        {"-",       MINUS,       2, 1},
+        {"*",       MULT,        2, 1},
         {"/",       DIVIDE,     2, 1},
 
         {"honor",   INCR,       1, 5},
@@ -123,10 +152,15 @@ const token tokens[] = {
 
         {":",       OPEN_BR,    -1, 1},
         {".",       CLOS_BR,    -1, 1},
-        {"\"",      COND_DIVIDER,-1, 1},
+        {"\"",      COND_DIVIDER,-1,1},
 
         {"(",       OPEN_EQ,    -1, 1},
         {")",       CLOS_EQ,    -1, 1},
+        {"of",      ARGUMENTS,  -1, 2},
+        {"and",     LAST_ARG,   -1, 3},
+        {"a",       ASSIGN_BY_LEN,-1, 2},
+
+        {"mandate", PRINT,      -1, 7},
 };
 
 const token states[] {

@@ -3,6 +3,7 @@
 
 #include "operations.h"
 #include "tokens.h"
+#include <stdlib.h>
 
 int default_size = 20;
 

@@ -1,0 +1,2 @@
+Result: 40320.0
+Program was manually finished

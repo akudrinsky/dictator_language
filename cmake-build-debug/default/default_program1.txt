@@ -1,0 +1,94 @@
+label cycle
+
+push 0
+popr ax
+call heart
+
+displ
+clrscr
+
+push 10
+popr ax
+call heart
+
+displ
+clrscr
+
+pushr ax
+push 1
+add
+popr ax
+pushr ax
+push 100
+ja cycle
+
+end
+
+
+func heart
+push 4
+popm [0]
+push 4
+popm [9]
+push 4
+popm [90]
+push 4
+popm [99]
+push 6
+popm [1]
+push 6
+popm [10]
+push 6
+popm [8]
+push 6
+popm [19]
+push 6
+popm [89]
+push 6
+popm [98]
+push 6
+popm [80]
+push 6
+popm [91]
+
+push 2
+popm [ax+34]
+push 2
+popm [ax+35]
+push 2
+popm [ax+23]
+push 2
+popm [ax+26]
+push 2
+popm [ax+27]
+push 2
+popm [ax+22]
+push 2
+popm [ax+38]
+push 2
+popm [ax+31]
+push 2
+popm [ax+47]
+push 2
+popm [ax+42]
+push 2
+popm [ax+55]
+push 2
+popm [ax+54]
+push 2
+popm [ax+36]
+push 2
+popm [ax+33]
+push 2
+popm [ax+37]
+push 2
+popm [ax+32]
+push 2
+popm [ax+44]
+push 2
+popm [ax+45]
+push 2
+popm [ax+43]
+push 2
+popm [ax+46]
+ret

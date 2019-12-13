@@ -1,8 +1,25 @@
 $ my program $
 
-dictate reign :
-    person wife
-    wife now ( 1 + 3 * 2 ) / 3
+dictate betrayal of iter, sum :
+    sum now sum * iter
+    punish iter
 
+    if " iter worse dead " :
+        cause betrayal of iter and sum .
+
+    summon
+.
+
+dictate reign :
     person minister
+    person collector
+
+    minister now a disgrace
+    collector now destroyed
+
+    cause betrayal of minister and collector
+
+    know minister
+
+    summon
 .

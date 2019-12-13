@@ -32,6 +32,11 @@ struct str {
 
 //using namespace std;
 
+void itoa_ (int a, char* s);
+int atoi_ (char* s, bool* is_good);
+
+char* int_to_code (int number);
+
 void err_info (const char* str, const char* file = "errors_info.txt");
 void say_it (const char* message, bool need_print = true, const char* voice = "Yuri");
 
@@ -61,6 +66,114 @@ void test_make_orig_txt (void);
 void test_count_symbols (void);
 void test_count_lines (void);
 void test_replace_c (void);
+
+//‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+//! Converts integer to string
+//!
+//! @param [in] a - integer value
+//! @param [out] string value of an integer
+//!
+//‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+void itoa_ (int a, char* s)
+{
+    if (s[0] != '\0')                                //s[] must be empty
+        printf ("String must be empty!\n");
+
+    int i = 0;
+    bool ispositive = true;
+
+    if (a < 0){
+        a = -a;
+        ispositive = false;
+    }
+    int ndig = (a==0? 1: int (log10 (a) + 1));           //number of digits in integer value
+
+    s[0] = '-';
+    int digit_place = 1;                                     //digit_place - what digit are we now converting
+    for (int j=1; j<ndig; j++)
+        digit_place = digit_place * 10;
+
+    bool beginning = true;                                  //start to read number
+    for (i=ndig; i>0; --i) {
+        if (ispositive && beginning) {                        //then there is no minus
+            ++i;
+            beginning = false;
+        }
+        if (digit_place == 0)                                   //then because the number was positive, there is one "false" digit left
+            break;
+        s[ndig-i+1] = (a / digit_place) + '0';
+        a = a % digit_place;                                   //switch to next digit
+        digit_place = digit_place / 10;
+    }
+
+
+}
+
+//‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+//! Converts string to integer
+//!
+//! @param [in] s - array of char
+//! @param [out] integer value of a string if it exists, else prints "sorry" and assert occures
+//!
+//‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+int atoi_ (char* s, bool* is_good)
+{
+    assert (s != nullptr);
+
+    *is_good = true;
+
+    char c = '0';                                               //code of symbol in s minus code of zero (then all numerals have them in code, all non-numerals don't)
+    int a = 0, i = 0;
+    bool isnumber = true, ispositive = true;                   //assume it is a positive number
+    if (s[0] == '-')
+        ispositive = false;
+
+
+    for (i=0; i<strlen(s); ++i)                            //start from non-minus item
+    {
+        if (!ispositive && i == 0)
+            ++i;
+
+        c = s[i] - '0';
+
+        if (c < 10 && c > -1)                //then it is a number
+            a = a * 10 + c;
+        else                                //then it is not a number, so isnumber = false
+        {
+            isnumber = false;               //it is not a number
+            break;
+        }
+    }
+
+    if (!isnumber)                              //it is not a number
+    {
+        *is_good = false;
+        return 0;
+    }
+
+    if (ispositive)
+        return a;
+    else
+        return (-a);
+}
+
+//‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+//! Makes machine code (aka binary number system) from signed int (aka usual number system)
+//!
+//! @param [in] number - int number to convert
+//! @param [out] machine - pointer to machine representation of number
+//‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
+char* int_to_code (int number) {
+
+    char* machine = (char*)calloc (sizeof (int), sizeof (char));
+
+    machine[0] = number & 255;
+    machine[1] = (number & 65280) >> 8;
+    machine[2] = (number & 16711680) >> 16;
+    machine[3] = (number & 4278190080) >> 24;
+
+    return machine;
+}
 
 int find_bool_length (int path, const int max_depth = 10) {
     int num = 0;

@@ -1,1 +1,23 @@
-((2.000000)*((x)x(unknown)))
+$ my program $
+
+dictate betrayal of iter, sum :
+    sum now sum * iter
+    punish iter
+
+    summon
+.
+
+dictate reign :
+    person minister
+    person collector
+
+    minister now a disgrace
+    collector now destroyed
+
+    while " minister worse dead " :
+        cause betrayal of minister and collector .
+
+    know collector
+
+    summon
+.

@@ -215,6 +215,7 @@ void node::photo(const char* pict_name, const char* pict_type, int iter, FILE* p
 //#include "rec.h"
 #include "tokenizer.h"
 #include "frontend.h"
+#include "frontend-1.h"
 
 /*
 //‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐‐
@@ -314,7 +315,6 @@ node* rec_descent(const char *filename) {
     }
 
     frontend* parser = new frontend (nodes);
-
 
     return parser->all ();
 }

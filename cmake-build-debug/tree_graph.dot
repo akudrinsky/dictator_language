@@ -1,41 +1,119 @@
 digraph G{
 	edge[color="chartreuse4",fontcolor="blue",fontsize=12];
 	node[shape="rectangle",fontsize=15];
-	1 [shape=record,label="  <f0> 0x0| {P | (null)} | <f1> 0x7fbe89e034f0" ];
-	3 [shape=record,label="  <f0> 0x0| {D | (null)} | <f1> 0x7fbe89e034c0" ];
-	7 [shape=record,label="  <f0> 0x0| {dictate | (null)} | <f1> 0x7fbe89e03190" ];
-	15 [shape=record,label="  <f0> 0x0| {id | reign} | <f1> 0x7fbe89e03490" ];
-	31 [shape=record,label="  <f0> 0x7fbe89e03400| {B | (null)} | <f1> 0x7fbe89e03460" ];
-	62 [shape=record,label="  <f0> 0x7fbe89e03220| {B | (null)} | <f1> 0x7fbe89e033d0" ];
-	124 [shape=record,label="  <f0> 0x0| {B | (null)} | <f1> 0x7fbe89e031f0" ];
-	249 [shape=record,label="  <f0> 0x0| {person | (null)} | <f1> 0x7fbe89e031c0" ];
-	499 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
-		249:<f1> -> 499[color="orange"]
-		124:<f1> -> 249[color="orange"]
-		62:<f0> -> 124
-	125 [shape=record,label="  <f0> 0x7fbe89e03250| {now | (null)} | <f1> 0x7fbe89e033a0" ];
-	250 [shape=record,label="  <f0> 0x0| {id | wife} | <f1> 0x0" ];
-		125:<f0> -> 250
-	251 [shape=record,label="  <f0> 0x7fbe89e03340| {/ | (null)} | <f1> 0x7fbe89e03370" ];
-	502 [shape=record,label="  <f0> 0x7fbe89e03280| {+ | (null)} | <f1> 0x7fbe89e03310" ];
-	1004 [shape=record,label="  <f0> 0x0| {number | 1} | <f1> 0x0" ];
-		502:<f0> -> 1004
-	1005 [shape=record,label="  <f0> 0x7fbe89e032b0| {* | (null)} | <f1> 0x7fbe89e032e0" ];
-	2010 [shape=record,label="  <f0> 0x0| {number | 3} | <f1> 0x0" ];
-		1005:<f0> -> 2010
-	2011 [shape=record,label="  <f0> 0x0| {number | 2} | <f1> 0x0" ];
-		1005:<f1> -> 2011[color="orange"]
-		502:<f1> -> 1005[color="orange"]
-		251:<f0> -> 502
-	503 [shape=record,label="  <f0> 0x0| {number | 3} | <f1> 0x0" ];
-		251:<f1> -> 503[color="orange"]
-		125:<f1> -> 251[color="orange"]
-		62:<f1> -> 125[color="orange"]
-		31:<f0> -> 62
-	63 [shape=record,label="  <f0> 0x0| {person | (null)} | <f1> 0x7fbe89e03430" ];
-	127 [shape=record,label="  <f0> 0x0| {id | minister} | <f1> 0x0" ];
-		63:<f1> -> 127[color="orange"]
-		31:<f1> -> 63[color="orange"]
+	1 [shape=record,label="  <f0> 0x7fb6ea404500| {D | (null)} | <f1> 0x7fb6ea404a40" ];
+	2 [shape=record,label="  <f0> 0x0| {D | (null)} | <f1> 0x7fb6ea4044d0" ];
+	5 [shape=record,label="  <f0> 0x7fb6ea404050| {dictate | (null)} | <f1> 0x7fb6ea403f90" ];
+	10 [shape=record,label="  <f0> 0x7fb6ea403ff0| {varlist | (null)} | <f1> 0x7fb6ea404020" ];
+	20 [shape=record,label="  <f0> 0x0| {varlist | (null)} | <f1> 0x7fb6ea403fc0" ];
+	41 [shape=record,label="  <f0> 0x0| {id | iter} | <f1> 0x0" ];
+		20:<f1> -> 41[color="orange"]
+		10:<f0> -> 20
+	21 [shape=record,label="  <f0> 0x0| {id | sum} | <f1> 0x0" ];
+		10:<f1> -> 21[color="orange"]
+		5:<f0> -> 10
+	11 [shape=record,label="  <f0> 0x0| {id | betrayal} | <f1> 0x7fb6ea4044a0" ];
+	23 [shape=record,label="  <f0> 0x7fb6ea404440| {B | (null)} | <f1> 0x7fb6ea404470" ];
+	46 [shape=record,label="  <f0> 0x7fb6ea404200| {B | (null)} | <f1> 0x7fb6ea404410" ];
+	92 [shape=record,label="  <f0> 0x7fb6ea404170| {B | (null)} | <f1> 0x7fb6ea4041d0" ];
+	184 [shape=record,label="  <f0> 0x0| {B | (null)} | <f1> 0x7fb6ea404140" ];
+	369 [shape=record,label="  <f0> 0x7fb6ea404080| {now | (null)} | <f1> 0x7fb6ea404110" ];
+	738 [shape=record,label="  <f0> 0x0| {id | sum} | <f1> 0x0" ];
+		369:<f0> -> 738
+	739 [shape=record,label="  <f0> 0x7fb6ea4040b0| {* | (null)} | <f1> 0x7fb6ea4040e0" ];
+	1478 [shape=record,label="  <f0> 0x0| {id | sum} | <f1> 0x0" ];
+		739:<f0> -> 1478
+	1479 [shape=record,label="  <f0> 0x0| {id | iter} | <f1> 0x0" ];
+		739:<f1> -> 1479[color="orange"]
+		369:<f1> -> 739[color="orange"]
+		184:<f1> -> 369[color="orange"]
+		92:<f0> -> 184
+	185 [shape=record,label="  <f0> 0x0| {punish | (null)} | <f1> 0x7fb6ea4041a0" ];
+	371 [shape=record,label="  <f0> 0x0| {id | iter} | <f1> 0x0" ];
+		185:<f1> -> 371[color="orange"]
+		92:<f1> -> 185[color="orange"]
+		46:<f0> -> 92
+	93 [shape=record,label="  <f0> 0x7fb6ea404290| {if | (null)} | <f1> 0x7fb6ea4043e0" ];
+	186 [shape=record,label="  <f0> 0x7fb6ea404230| {worse | (null)} | <f1> 0x7fb6ea404260" ];
+	372 [shape=record,label="  <f0> 0x0| {id | iter} | <f1> 0x0" ];
+		186:<f0> -> 372
+	373 [shape=record,label="  <f0> 0x0| {number | 0} | <f1> 0x0" ];
+		186:<f1> -> 373[color="orange"]
+		93:<f0> -> 186
+	187 [shape=record,label="  <f0> 0x0| {B | (null)} | <f1> 0x7fb6ea4043b0" ];
+	375 [shape=record,label="  <f0> 0x7fb6ea404380| {cause | (null)} | <f1> 0x7fb6ea4042c0" ];
+	750 [shape=record,label="  <f0> 0x7fb6ea404320| {varlist | (null)} | <f1> 0x7fb6ea404350" ];
+	1500 [shape=record,label="  <f0> 0x0| {varlist | (null)} | <f1> 0x7fb6ea4042f0" ];
+	3001 [shape=record,label="  <f0> 0x0| {id | iter} | <f1> 0x0" ];
+		1500:<f1> -> 3001[color="orange"]
+		750:<f0> -> 1500
+	1501 [shape=record,label="  <f0> 0x0| {id | sum} | <f1> 0x0" ];
+		750:<f1> -> 1501[color="orange"]
+		375:<f0> -> 750
+	751 [shape=record,label="  <f0> 0x0| {id | betrayal} | <f1> 0x0" ];
+		375:<f1> -> 751[color="orange"]
+		187:<f1> -> 375[color="orange"]
+		93:<f1> -> 187[color="orange"]
+		46:<f1> -> 93[color="orange"]
+		23:<f0> -> 46
+	47 [shape=record,label="  <f0> 0x0| {summon | (null)} | <f1> 0x0" ];
+		23:<f1> -> 47[color="orange"]
+		11:<f1> -> 23[color="orange"]
+		5:<f1> -> 11[color="orange"]
+		2:<f1> -> 5[color="orange"]
+		1:<f0> -> 2
+	3 [shape=record,label="  <f0> 0x0| {dictate | (null)} | <f1> 0x7fb6ea404530" ];
+	7 [shape=record,label="  <f0> 0x0| {id | reign} | <f1> 0x7fb6ea404a10" ];
+	15 [shape=record,label="  <f0> 0x7fb6ea4049b0| {B | (null)} | <f1> 0x7fb6ea4049e0" ];
+	30 [shape=record,label="  <f0> 0x7fb6ea404920| {B | (null)} | <f1> 0x7fb6ea404980" ];
+	60 [shape=record,label="  <f0> 0x7fb6ea4047d0| {B | (null)} | <f1> 0x7fb6ea4048f0" ];
+	120 [shape=record,label="  <f0> 0x7fb6ea404710| {B | (null)} | <f1> 0x7fb6ea4047a0" ];
+	240 [shape=record,label="  <f0> 0x7fb6ea404650| {B | (null)} | <f1> 0x7fb6ea4046e0" ];
+	480 [shape=record,label="  <f0> 0x7fb6ea4045c0| {B | (null)} | <f1> 0x7fb6ea404620" ];
+	960 [shape=record,label="  <f0> 0x0| {B | (null)} | <f1> 0x7fb6ea404590" ];
+	1921 [shape=record,label="  <f0> 0x0| {person | (null)} | <f1> 0x7fb6ea404560" ];
+	3843 [shape=record,label="  <f0> 0x0| {id | minister} | <f1> 0x0" ];
+		1921:<f1> -> 3843[color="orange"]
+		960:<f1> -> 1921[color="orange"]
+		480:<f0> -> 960
+	961 [shape=record,label="  <f0> 0x0| {person | (null)} | <f1> 0x7fb6ea4045f0" ];
+	1923 [shape=record,label="  <f0> 0x0| {id | collector} | <f1> 0x0" ];
+		961:<f1> -> 1923[color="orange"]
+		480:<f1> -> 961[color="orange"]
+		240:<f0> -> 480
+	481 [shape=record,label="  <f0> 0x7fb6ea404680| {now | (null)} | <f1> 0x7fb6ea4046b0" ];
+	962 [shape=record,label="  <f0> 0x0| {id | minister} | <f1> 0x0" ];
+		481:<f0> -> 962
+	963 [shape=record,label="  <f0> 0x0| {number | 8} | <f1> 0x0" ];
+		481:<f1> -> 963[color="orange"]
+		240:<f1> -> 481[color="orange"]
+		120:<f0> -> 240
+	241 [shape=record,label="  <f0> 0x7fb6ea404740| {now | (null)} | <f1> 0x7fb6ea404770" ];
+	482 [shape=record,label="  <f0> 0x0| {id | collector} | <f1> 0x0" ];
+		241:<f0> -> 482
+	483 [shape=record,label="  <f0> 0x0| {number | 1} | <f1> 0x0" ];
+		241:<f1> -> 483[color="orange"]
+		120:<f1> -> 241[color="orange"]
+		60:<f0> -> 120
+	121 [shape=record,label="  <f0> 0x7fb6ea4048c0| {cause | (null)} | <f1> 0x7fb6ea404800" ];
+	242 [shape=record,label="  <f0> 0x7fb6ea404860| {varlist | (null)} | <f1> 0x7fb6ea404890" ];
+	484 [shape=record,label="  <f0> 0x0| {varlist | (null)} | <f1> 0x7fb6ea404830" ];
+	969 [shape=record,label="  <f0> 0x0| {id | minister} | <f1> 0x0" ];
+		484:<f1> -> 969[color="orange"]
+		242:<f0> -> 484
+	485 [shape=record,label="  <f0> 0x0| {id | collector} | <f1> 0x0" ];
+		242:<f1> -> 485[color="orange"]
+		121:<f0> -> 242
+	243 [shape=record,label="  <f0> 0x0| {id | betrayal} | <f1> 0x0" ];
+		121:<f1> -> 243[color="orange"]
+		60:<f1> -> 121[color="orange"]
+		30:<f0> -> 60
+	61 [shape=record,label="  <f0> 0x0| {know | (null)} | <f1> 0x7fb6ea404950" ];
+	123 [shape=record,label="  <f0> 0x0| {id | minister} | <f1> 0x0" ];
+		61:<f1> -> 123[color="orange"]
+		30:<f1> -> 61[color="orange"]
+		15:<f0> -> 30
+	31 [shape=record,label="  <f0> 0x0| {summon | (null)} | <f1> 0x0" ];
 		15:<f1> -> 31[color="orange"]
 		7:<f1> -> 15[color="orange"]
 		3:<f1> -> 7[color="orange"]

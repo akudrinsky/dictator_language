@@ -3,6 +3,49 @@
 
 #include "tree.h"
 
+struct for_funcs {
+    node* *names;
+    int amount;
+
+    explicit for_funcs (int size = 5);
+    void append (node* element);
+    void see ();
+
+    int search_func (node* name);
+    ~for_funcs ();
+};
+
+for_funcs::for_funcs (int size) {
+    names = new node*[size];
+    amount = 0;
+}
+
+void for_funcs::append (node* element) {
+    names[amount] = element;
+    ++amount;
+}
+
+void for_funcs::see () {
+    for (int i = 0; i < amount; ++i) {
+        printf ("func: %s\n", names[i]->right->data);
+    }
+}
+
+int for_funcs::search_func (node* needed) {
+    for (int i = 0; i < amount; ++i) {
+        if (strcmp (names[i]->data, needed->data) == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+for_funcs::~for_funcs() {
+
+}
+
+for_funcs* functions = new for_funcs;
+
 bool not_special (char symbol) {
     return (symbol != ' ' && symbol != '\n' && symbol != '.' &&
             symbol != ',' && symbol != '\t' && symbol != '$' &&
@@ -51,10 +94,12 @@ cell::cell() {
 }
 
 cell* tokenize (char* str, const int max_nodes_number = 100) {
+
     cell *nodes = new cell[max_nodes_number];
     int n_nodes = 0;
 
     while (*str != '\0') {
+
         //printf ("%s\n\n<------------------------------------>\n\n", str);
 
         while (*str == ' ' || *str == '\n' || *str == '\t' || *str == ',') {
@@ -166,6 +211,11 @@ cell* tokenize (char* str, const int max_nodes_number = 100) {
                         data = "punish";
                         str += 6;
                     }
+                    else if (strncmp (str, "mandate", 7) == 0) {
+                        nodes[n_nodes].type = PRINT;
+                        data = "mandate";
+                        str += 7;
+                    }
                     else {
                         now_parse_that_long_long_name
                     }
@@ -224,6 +274,11 @@ cell* tokenize (char* str, const int max_nodes_number = 100) {
                         nodes[n_nodes].type = CONDITION;
                         data = "otherwise";
                         str += 9;
+                    }
+                    else if (strncmp (str, "of", 2) == 0) {
+                        nodes[n_nodes].type = ARGUMENTS;
+                        data = "of";
+                        str += 2;
                     }
                     else {
                         now_parse_that_long_long_name
@@ -324,6 +379,26 @@ cell* tokenize (char* str, const int max_nodes_number = 100) {
                         data = states[ANGRY].name;
                         str += states[ANGRY].length;
                     }
+                    else if (strncmp (str, "and", 3) == 0) {
+                        nodes[n_nodes].type = LAST_ARG;
+                        data = "and";
+                        str += 3;
+                    }
+                    else if (strncmp (str, "a ", 2) == 0) {
+                        str += 2;
+                        while (*str == ' ') {
+                            ++str;
+                        }
+                        int scanfed = 0;
+
+                        while (not_divider (*str)) {
+                            ++str;
+                            ++scanfed;
+                        }
+
+                        itoa_ (scanfed, data);
+                        nodes[n_nodes].type = NUMBER;
+                    }
                     else {
                         now_parse_that_long_long_name
                     }
@@ -350,6 +425,17 @@ cell* tokenize (char* str, const int max_nodes_number = 100) {
                         nodes[n_nodes].type = NUMBER;
                         data = states[LOYAl].name;
                         str += states[LOYAl].length;
+                    }
+                    else {
+                        now_parse_that_long_long_name
+                    }
+                    break;
+                }
+                case 'k': {
+                    if (strncmp (str, "know", 4) == 0) {
+                        nodes[n_nodes].type = OUT;
+                        data = "know";
+                        str += 4;
                     }
                     else {
                         now_parse_that_long_long_name

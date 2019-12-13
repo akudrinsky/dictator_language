@@ -13,6 +13,7 @@ struct frontend {
     node* all ();                   //1
     node* global ();                //2
     node* def_func ();              //3
+    node* arguments ();
     node* variable ();              //3
 
     node* get_id ();                //3
@@ -23,9 +24,10 @@ struct frontend {
     node* condition ();
     node* cycle ();
 
+    node* print ();
+
     node* equation ();
     node* multiplication ();
-    node* summation ();
     node* brackets ();
 
 };
@@ -37,7 +39,7 @@ frontend::frontend(cell *nodes) {
 node* frontend::all () {
     node* nd = global ();
 
-    return create_node (nullptr, PROGRAMM, nullptr, nd);
+    return nd;
 }
 
 node* frontend::global() {
@@ -65,8 +67,13 @@ node* frontend::def_func() {
         nds++;
 
         node* nd = get_id ();
+        node* args = nullptr;
 
         switch (nds->type) {
+            case ARGUMENTS: {
+                nds++;
+                args = arguments ();
+            }
             case OPEN_BR: {
                 nds++;
                 break;
@@ -90,10 +97,38 @@ node* frontend::def_func() {
             err_info ("\n");
         }
 
-        return create_node (nullptr, DEFINITION, nullptr, nd);
+        node* def_function = create_node (nullptr, DEFINITION, args, nd);
+        functions->append (def_function);
+        return def_function;
 
     }
     return nullptr;
+}
+
+node* frontend::arguments() {
+    node* nd = nullptr;
+    bool not_last = true;
+
+    if (nds->type == ARGUMENTS) {
+        nds++;
+    }
+    while ((nds->type == ID || nds->type == NUMBER || nds->type == LAST_ARG) && not_last) {
+        if ((nds - 1)->type == LAST_ARG) {
+            not_last = false;
+        }
+
+        if (nds->type == ID) {
+            nd = create_node (nullptr, VARLIST, nd, get_id ());
+        }
+        else if (nds->type == NUMBER) {
+            nd = create_node (nullptr, VARLIST, nd, get_number ());
+        }
+        else {
+            nds++;
+        }
+    }
+
+    return nd;
 }
 
 node* frontend::variable() {
@@ -126,7 +161,8 @@ node* frontend::instruction() {
     while (nds->type == VARIABLE    || nds->type == ID ||
            nds->type == INCR        || nds->type == DECR ||
            nds->type == CALL        || nds->type == RETURN ||
-           nds->type == IF          || nds->type == WHILE) {
+           nds->type == IF          || nds->type == WHILE ||
+           nds->type == OUT) {
         printf ("instruct:%9s\t\t%s\n\n", tokens[nds->type].name, nds->name);
         switch (nds->type) {
             case VARIABLE: {
@@ -172,7 +208,7 @@ node* frontend::instruction() {
             case CALL: {
                 nds++;
                 node* tmp = get_id ();
-                tmp = create_node (nullptr, CALL, nullptr, tmp);
+                tmp = create_node (nullptr, CALL, arguments (), tmp);
 
                 nd = create_node (nullptr, INSTRUCTION, nd, tmp);
                 break;
@@ -196,6 +232,18 @@ node* frontend::instruction() {
 
                 nd = create_node (nullptr, INSTRUCTION, nd, tmp);
                 break;
+            }
+            case OUT: {
+                nds++;
+                node* tmp = get_id ();
+                tmp = create_node (nullptr, OUT, nullptr, tmp);
+
+                nd = create_node (nullptr, INSTRUCTION, nd, tmp);
+                break;
+            }
+            case PRINT: {
+                nds++;
+
             }
         }
 
